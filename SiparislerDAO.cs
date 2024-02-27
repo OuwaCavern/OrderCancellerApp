@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace OrderCancellerApp
 {
@@ -21,17 +22,24 @@ namespace OrderCancellerApp
             SqlCommand showCommandSQL = new SqlCommand(showCommand, sqlConnection);
             using (SqlDataReader reader = showCommandSQL.ExecuteReader())
             {
-                while (reader.Read())
+                try
                 {
-                    Siparisler a = new Siparisler
+                    while (reader.Read())
                     {
-                        NickName = reader.GetString(0),
-                        Aciklama = reader.GetString(1),
-                        Odendi = reader.GetInt32(2),
-                        Kapandi = reader.GetInt32(3),
-                        SiparisNo = reader.GetInt32(4),
-                    };
-                    returnThese.Add(a);
+                        Siparisler a = new Siparisler
+                        {
+                            NickName = (reader.IsDBNull(0) ? "null" : reader.GetString(0)),
+                            Aciklama = (reader.IsDBNull(1) ? "null" : reader.GetString(1)),
+                            Odendi = (reader.IsDBNull(2) ? false : reader.GetBoolean(2)),
+                            Kapandi = (reader.IsDBNull(3) ? false : reader.GetBoolean(3)),
+                            SiparisNo = (reader.IsDBNull(4) ? 0 : reader.GetInt32(4)),
+                        };
+                        returnThese.Add(a);
+                    }
+                }
+                catch (Exception ex) 
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
             return returnThese;

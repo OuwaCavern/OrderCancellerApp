@@ -9,8 +9,8 @@ namespace OrderCancellerApp
     {
         public string NickName { get; set; }
         public string Aciklama { get; set; }
-        public int? Odendi { get; set; }
-        public int? Kapandi { get; set; }
-        public int? SiparisNo {  get; set; }
+        public bool Odendi { get; set; }
+        public bool Kapandi { get; set; }
+        public int SiparisNo {  get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace OrderCancellerApp
             string computerName = Environment.MachineName;
             string connectionString = "";
             connectionString = $"Data Source={computerName}\\DESENERP;Initial Catalog=DesenPOS;Persist Security Info=True;User ID=sa;Password=DesenErp.12345;";
-            string showCommand = "SELECT NickName,Aciklama,Odendi,Kapandi,SiparisNo FROM POSSiparis";
+            string showCommand = $"SELECT NickName,Aciklama,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1";
             List<Siparisler> returnThese = new List<Siparisler>();
             SqlConnection sqlConnection;
             sqlConnection = new SqlConnection(connectionString);

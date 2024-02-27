@@ -71,6 +71,7 @@
             this.siparisNOGirdisi.Name = "siparisNOGirdisi";
             this.siparisNOGirdisi.Size = new System.Drawing.Size(130, 20);
             this.siparisNOGirdisi.TabIndex = 2;
+            this.siparisNOGirdisi.TextChanged += new System.EventHandler(this.siparisNOGirdisi_TextChanged);
             // 
             // iptalButonu
             // 
@@ -80,6 +81,7 @@
             this.iptalButonu.TabIndex = 3;
             this.iptalButonu.Text = "Iptal Et";
             this.iptalButonu.UseVisualStyleBackColor = true;
+            this.iptalButonu.Click += new System.EventHandler(this.iptalButonu_Click);
             // 
             // teslimButonu
             // 
@@ -89,6 +91,7 @@
             this.teslimButonu.TabIndex = 4;
             this.teslimButonu.Text = "Teslim Edildi";
             this.teslimButonu.UseVisualStyleBackColor = true;
+            this.teslimButonu.Click += new System.EventHandler(this.teslimButonu_Click);
             // 
             // dataSet1
             // 
@@ -99,20 +102,20 @@
             this.siparisListesi.AllowUserToAddRows = false;
             this.siparisListesi.AllowUserToDeleteRows = false;
             this.siparisListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.siparisListesi.Location = new System.Drawing.Point(12, 201);
+            this.siparisListesi.Location = new System.Drawing.Point(-1, 201);
             this.siparisListesi.Name = "siparisListesi";
             this.siparisListesi.ReadOnly = true;
-            this.siparisListesi.Size = new System.Drawing.Size(284, 150);
+            this.siparisListesi.Size = new System.Drawing.Size(323, 150);
             this.siparisListesi.TabIndex = 5;
             // 
             // zamanBildirgesi
             // 
             this.zamanBildirgesi.AutoSize = true;
-            this.zamanBildirgesi.Location = new System.Drawing.Point(65, 185);
+            this.zamanBildirgesi.Location = new System.Drawing.Point(111, 185);
             this.zamanBildirgesi.Name = "zamanBildirgesi";
-            this.zamanBildirgesi.Size = new System.Drawing.Size(173, 13);
+            this.zamanBildirgesi.Size = new System.Drawing.Size(73, 13);
             this.zamanBildirgesi.TabIndex = 6;
-            this.zamanBildirgesi.Text = "3 Saatten Fazla Bekleyen Siparişler";
+            this.zamanBildirgesi.Text = "Açık Siparişler";
             // 
             // siparisGoster
             // 

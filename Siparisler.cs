@@ -7,10 +7,10 @@ namespace OrderCancellerApp
 {
     public class Siparisler
     {
-        public string NickName { get; set; }
-        public string Aciklama { get; set; }
-        public bool Odendi { get; set; }
-        public bool Kapandi { get; set; }
-        public int SiparisNo {  get; set; }
+        public string MüşteriAdı { get; set; }
+        public string Açıklama { get; set; }
+        public bool Ödendi { get; set; }
+        public bool Kapandı { get; set; }
+        public int SiparişNo {  get; set; }
     }
 }

@@ -39,6 +39,7 @@
             this.siparisListesi = new System.Windows.Forms.DataGridView();
             this.zamanBildirgesi = new System.Windows.Forms.Label();
             this.siparisGoster = new System.Windows.Forms.Button();
+            this.siparisNoGirdiBilgi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListesi)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             this.NO.AutoSize = true;
             this.NO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.NO.Location = new System.Drawing.Point(111, 58);
+            this.NO.Location = new System.Drawing.Point(132, 68);
             this.NO.Name = "NO";
             this.NO.Size = new System.Drawing.Size(84, 18);
             this.NO.TabIndex = 1;
@@ -67,15 +68,15 @@
             // 
             // siparisNOGirdisi
             // 
-            this.siparisNOGirdisi.Location = new System.Drawing.Point(87, 79);
+            this.siparisNOGirdisi.Location = new System.Drawing.Point(12, 89);
             this.siparisNOGirdisi.Name = "siparisNOGirdisi";
-            this.siparisNOGirdisi.Size = new System.Drawing.Size(130, 20);
+            this.siparisNOGirdisi.Size = new System.Drawing.Size(313, 20);
             this.siparisNOGirdisi.TabIndex = 2;
             this.siparisNOGirdisi.TextChanged += new System.EventHandler(this.siparisNOGirdisi_TextChanged);
             // 
             // iptalButonu
             // 
-            this.iptalButonu.Location = new System.Drawing.Point(12, 115);
+            this.iptalButonu.Location = new System.Drawing.Point(12, 124);
             this.iptalButonu.Name = "iptalButonu";
             this.iptalButonu.Size = new System.Drawing.Size(91, 28);
             this.iptalButonu.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             // teslimButonu
             // 
-            this.teslimButonu.Location = new System.Drawing.Point(205, 115);
+            this.teslimButonu.Location = new System.Drawing.Point(234, 124);
             this.teslimButonu.Name = "teslimButonu";
             this.teslimButonu.Size = new System.Drawing.Size(91, 28);
             this.teslimButonu.TabIndex = 4;
@@ -101,17 +102,23 @@
             // 
             this.siparisListesi.AllowUserToAddRows = false;
             this.siparisListesi.AllowUserToDeleteRows = false;
-            this.siparisListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.siparisListesi.AllowUserToOrderColumns = true;
+            this.siparisListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.siparisListesi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.siparisListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.siparisListesi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.siparisListesi.Location = new System.Drawing.Point(-1, 201);
             this.siparisListesi.Name = "siparisListesi";
             this.siparisListesi.ReadOnly = true;
-            this.siparisListesi.Size = new System.Drawing.Size(323, 150);
+            this.siparisListesi.RowHeadersVisible = false;
+            this.siparisListesi.RowHeadersWidth = 4;
+            this.siparisListesi.Size = new System.Drawing.Size(340, 150);
             this.siparisListesi.TabIndex = 5;
             // 
             // zamanBildirgesi
             // 
             this.zamanBildirgesi.AutoSize = true;
-            this.zamanBildirgesi.Location = new System.Drawing.Point(111, 185);
+            this.zamanBildirgesi.Location = new System.Drawing.Point(132, 185);
             this.zamanBildirgesi.Name = "zamanBildirgesi";
             this.zamanBildirgesi.Size = new System.Drawing.Size(73, 13);
             this.zamanBildirgesi.TabIndex = 6;
@@ -120,7 +127,7 @@
             // siparisGoster
             // 
             this.siparisGoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.siparisGoster.Location = new System.Drawing.Point(87, 159);
+            this.siparisGoster.Location = new System.Drawing.Point(103, 159);
             this.siparisGoster.Name = "siparisGoster";
             this.siparisGoster.Size = new System.Drawing.Size(130, 23);
             this.siparisGoster.TabIndex = 7;
@@ -128,11 +135,22 @@
             this.siparisGoster.UseVisualStyleBackColor = true;
             this.siparisGoster.Click += new System.EventHandler(this.siparisGoster_Click);
             // 
+            // siparisNoGirdiBilgi
+            // 
+            this.siparisNoGirdiBilgi.AutoSize = true;
+            this.siparisNoGirdiBilgi.Location = new System.Drawing.Point(59, 42);
+            this.siparisNoGirdiBilgi.Name = "siparisNoGirdiBilgi";
+            this.siparisNoGirdiBilgi.Size = new System.Drawing.Size(211, 26);
+            this.siparisNoGirdiBilgi.TabIndex = 8;
+            this.siparisNoGirdiBilgi.Text = "         Birden çok SiparişNO girmek için\n\r SiparişNOların aralarına virgül koyab" +
+    "ilirsiniz.";
+            // 
             // Uygulama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 352);
+            this.ClientSize = new System.Drawing.Size(337, 352);
+            this.Controls.Add(this.siparisNoGirdiBilgi);
             this.Controls.Add(this.siparisGoster);
             this.Controls.Add(this.zamanBildirgesi);
             this.Controls.Add(this.siparisListesi);
@@ -141,6 +159,7 @@
             this.Controls.Add(this.siparisNOGirdisi);
             this.Controls.Add(this.NO);
             this.Controls.Add(this.YemekPOS);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Uygulama";
@@ -164,6 +183,7 @@
         private System.Windows.Forms.DataGridView siparisListesi;
         private System.Windows.Forms.Label zamanBildirgesi;
         private System.Windows.Forms.Button siparisGoster;
+        private System.Windows.Forms.Label siparisNoGirdiBilgi;
     }
 }
 

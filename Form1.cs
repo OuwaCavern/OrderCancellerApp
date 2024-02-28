@@ -16,7 +16,6 @@ namespace OrderCancellerApp
         public Uygulama()
         {
             InitializeComponent();
-            
         }
 
         private void siparisGoster_Click(object sender, EventArgs e)
@@ -43,11 +42,25 @@ namespace OrderCancellerApp
             {
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
-                string updateQuery = $"declare @SiparisNoYaziniz nvarchar(100)='{siparisNOInput}'\r\nupdate POSSiparis set SiparisDurumu= 8,Odendi = 0 , Kapandi = 1, SysAktif=0 where SiparisNo=@SiparisNoYaziniz;\r\n\r\ninsert into SistemTarihce\r\n(KayitId\r\n,Tablo\r\n,Tarih\r\n,RowVersion\r\n,SysAktif\r\n,SysKayitTarihi\r\n,SysKaydedenKullanici\r\n,Aciklama)\r\n\r\nselect \r\ns.Id,'POSSiparis',GETDATE(),0,1,GETDATE(),'ManuelKapatildi','güncelleme' from POSSiparis s where s.SiparisNo=@SiparisNoYaziniz";
-                SqlCommand insertCommand = new SqlCommand(updateQuery, sqlConnection);
-                insertCommand.ExecuteNonQuery();
+                if (siparisNOInput.Contains(","))
+                {
+                    string[] siparislerinTamami = siparisNOInput.Split(',');
+                    foreach (string siparis in siparislerinTamami)
+                    {
+                        siparis.Trim();
+                        string updateQuery = $"declare @SiparisNoYaziniz nvarchar(100)='{siparis}'\r\nupdate POSSiparis set SiparisDurumu= 8,Odendi = 0 , Kapandi = 1, SysAktif=0 where SiparisNo=@SiparisNoYaziniz;\r\n\r\ninsert into SistemTarihce\r\n(KayitId\r\n,Tablo\r\n,Tarih\r\n,RowVersion\r\n,SysAktif\r\n,SysKayitTarihi\r\n,SysKaydedenKullanici\r\n,Aciklama)\r\n\r\nselect \r\ns.Id,'POSSiparis',GETDATE(),0,1,GETDATE(),'ManuelKapatildi','güncelleme' from POSSiparis s where s.SiparisNo=@SiparisNoYaziniz";
+                        SqlCommand insertCommand = new SqlCommand(updateQuery, sqlConnection);
+                        insertCommand.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string updateQuery = $"declare @SiparisNoYaziniz nvarchar(100)='{siparisNOInput}'\r\nupdate POSSiparis set SiparisDurumu= 8,Odendi = 0 , Kapandi = 1, SysAktif=0 where SiparisNo=@SiparisNoYaziniz;\r\n\r\ninsert into SistemTarihce\r\n(KayitId\r\n,Tablo\r\n,Tarih\r\n,RowVersion\r\n,SysAktif\r\n,SysKayitTarihi\r\n,SysKaydedenKullanici\r\n,Aciklama)\r\n\r\nselect \r\ns.Id,'POSSiparis',GETDATE(),0,1,GETDATE(),'ManuelKapatildi','güncelleme' from POSSiparis s where s.SiparisNo=@SiparisNoYaziniz";
+                    SqlCommand insertCommand = new SqlCommand(updateQuery, sqlConnection);
+                    insertCommand.ExecuteNonQuery();
+                }
                 sqlConnection.Close();
-                MessageBox.Show("Sipariş 'iptal edildi' durumuna getirildi..");
+                MessageBox.Show("Sipariş 'iptal edildi' durumuna getirildi.");
             }
         }
 
@@ -58,9 +71,22 @@ namespace OrderCancellerApp
             {
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
-                string updateQuery = $"declare @SiparisNoYaziniz nvarchar(100)='{siparisNOInput}'\r\nupdate POSSiparis set SiparisDurumu= 3,Odendi = 1 , Kapandi = 1, SysAktif=1 where SiparisNo=@SiparisNoYaziniz;\r\n\r\ninsert into SistemTarihce\r\n(KayitId\r\n,Tablo\r\n,Tarih\r\n,RowVersion\r\n,SysAktif\r\n,SysKayitTarihi\r\n,SysKaydedenKullanici\r\n,Aciklama)\r\n\r\nselect \r\ns.Id,'POSSiparis',GETDATE(),0,1,GETDATE(),'ManuelKapatildi','güncelleme' from POSSiparis s where s.SiparisNo=@SiparisNoYaziniz";
-                SqlCommand insertCommand = new SqlCommand(updateQuery, sqlConnection);
-                insertCommand.ExecuteNonQuery();
+                if (siparisNOInput.Contains(","))
+                {
+                    string[] siparislerinTamami = siparisNOInput.Split(',');
+                    foreach (string siparis in  siparislerinTamami)
+                    {
+                        string updateQuery = $"declare @SiparisNoYaziniz nvarchar(100)='{siparis}'\r\nupdate POSSiparis set SiparisDurumu= 3,Odendi = 1 , Kapandi = 1, SysAktif=1 where SiparisNo=@SiparisNoYaziniz;\r\n\r\ninsert into SistemTarihce\r\n(KayitId\r\n,Tablo\r\n,Tarih\r\n,RowVersion\r\n,SysAktif\r\n,SysKayitTarihi\r\n,SysKaydedenKullanici\r\n,Aciklama)\r\n\r\nselect \r\ns.Id,'POSSiparis',GETDATE(),0,1,GETDATE(),'ManuelKapatildi','güncelleme' from POSSiparis s where s.SiparisNo=@SiparisNoYaziniz";
+                        SqlCommand insertCommand = new SqlCommand(updateQuery, sqlConnection);
+                        insertCommand.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string updateQuery = $"declare @SiparisNoYaziniz nvarchar(100)='{siparisNOInput}'\r\nupdate POSSiparis set SiparisDurumu= 3,Odendi = 1 , Kapandi = 1, SysAktif=1 where SiparisNo=@SiparisNoYaziniz;\r\n\r\ninsert into SistemTarihce\r\n(KayitId\r\n,Tablo\r\n,Tarih\r\n,RowVersion\r\n,SysAktif\r\n,SysKayitTarihi\r\n,SysKaydedenKullanici\r\n,Aciklama)\r\n\r\nselect \r\ns.Id,'POSSiparis',GETDATE(),0,1,GETDATE(),'ManuelKapatildi','güncelleme' from POSSiparis s where s.SiparisNo=@SiparisNoYaziniz";
+                    SqlCommand insertCommand = new SqlCommand(updateQuery, sqlConnection);
+                    insertCommand.ExecuteNonQuery();
+                }
                 sqlConnection.Close();
                 MessageBox.Show("Sipariş 'teslim edildi' durumuna getirildi.");
             }

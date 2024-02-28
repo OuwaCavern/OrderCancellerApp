@@ -7,3 +7,4 @@ C:\Users\emirc\source\repos\OrderCancellerApp\bin\Debug\OrderCancellerApp.exe
 C:\Users\emirc\source\repos\OrderCancellerApp\bin\Debug\OrderCancellerApp.pdb
 C:\Users\emirc\source\repos\OrderCancellerApp\obj\Debug\OrderCancellerApp.exe
 C:\Users\emirc\source\repos\OrderCancellerApp\obj\Debug\OrderCancellerApp.pdb
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Debug\OrderCancellerApp.Giris.resources

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace OrderCancellerApp
@@ -25,8 +20,17 @@ namespace OrderCancellerApp
             siparisBindingSource.DataSource = siparislerDAO.TumSiparisleriGetir();
             siparisListesi.DataSource = siparisBindingSource;
         }
-        
-        string connectionString = $"Data Source={Environment.MachineName}\\DESENERP;Initial Catalog=DesenPOS;Persist Security Info=True;User ID=sa;Password=DesenErp.12345;";
+
+        string connectionString = "";
+        static void InitializeConnection(string connectionString)
+        {
+            ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+            {
+                ExeConfigFilename = @"C:\\DesenPOS\\DesenPos.exe.config"
+            };
+            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+            connectionString = ConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+        }
         SqlConnection sqlConnection;
         string siparisNOInput = "";
 
@@ -40,6 +44,7 @@ namespace OrderCancellerApp
             SiparisIptal();
             void SiparisIptal()
             {
+                InitializeConnection(connectionString);
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 if (siparisNOInput.Contains(","))
@@ -69,6 +74,7 @@ namespace OrderCancellerApp
             SiparisTeslim();
             void SiparisTeslim()
             {
+                InitializeConnection(connectionString);
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 if (siparisNOInput.Contains(","))

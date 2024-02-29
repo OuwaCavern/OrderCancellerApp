@@ -8,9 +8,11 @@ namespace OrderCancellerApp
     public partial class Uygulama : Form
     {
         BindingSource siparisBindingSource = new BindingSource();
+        private string connectionString = "";
         public Uygulama()
         {
             InitializeComponent();
+            connectionString = InitializeConnection();
         }
 
         private void siparisGoster_Click(object sender, EventArgs e)
@@ -21,15 +23,15 @@ namespace OrderCancellerApp
             siparisListesi.DataSource = siparisBindingSource;
         }
 
-        string connectionString = "";
-        static void InitializeConnection(string connectionString)
+
+        static string InitializeConnection()
         {
             ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
             {
-                ExeConfigFilename = @"C:\\DesenPOS\\DesenPos.exe.config"
+                ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
             };
             Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
-            connectionString = ConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+            return configuration.AppSettings.Settings["baglanti"].Value;
         }
         SqlConnection sqlConnection;
         string siparisNOInput = "";
@@ -44,7 +46,7 @@ namespace OrderCancellerApp
             SiparisIptal();
             void SiparisIptal()
             {
-                InitializeConnection(connectionString);
+                InitializeConnection();
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 if (siparisNOInput.Contains(","))
@@ -74,7 +76,7 @@ namespace OrderCancellerApp
             SiparisTeslim();
             void SiparisTeslim()
             {
-                InitializeConnection(connectionString);
+                InitializeConnection();
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 if (siparisNOInput.Contains(","))

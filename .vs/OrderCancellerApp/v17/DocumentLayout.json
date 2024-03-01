@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\siparislerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|c:\\users\\emirc\\source\\repos\\ordercancellerapp\\siparislerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:siparislerdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|c:\\users\\emirc\\source\\repos\\ordercancellerapp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\siparisler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,12 +15,16 @@
       "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{803D580E-5AAE-4E83-B29F-C31C1071D0F3}|OrderCancellerApp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,13 +38,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-26T11:27:20.506Z",
               "IsPinned": true
@@ -55,13 +55,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-26T11:27:36.533Z"
             },
@@ -73,26 +73,27 @@
               "RelativeDocumentMoniker": "SiparislerDAO.cs",
               "ToolTip": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\SiparislerDAO.cs",
               "RelativeToolTip": "SiparislerDAO.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAABNAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAWwCYAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-27T06:33:02.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Siparisler.cs",
               "DocumentMoniker": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Siparisler.cs",
               "RelativeDocumentMoniker": "Siparisler.cs",
               "ToolTip": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Siparisler.cs",
               "RelativeToolTip": "Siparisler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T06:20:58.435Z"
+              "WhenOpened": "2024-02-27T06:20:58.435Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
@@ -100,12 +101,11 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T13:45:10.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T13:45:10.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",

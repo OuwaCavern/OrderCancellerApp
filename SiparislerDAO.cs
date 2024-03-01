@@ -21,7 +21,7 @@ namespace OrderCancellerApp
         public List<Siparisler> TumSiparisleriGetir()
         {
             connectionString = InitializeConnection();
-            string showCommand = $"SELECT NickName,Aciklama,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND SiparisDurumu <> 3 AND SiparisDurumu <> 8";
+            string showCommand = $"SELECT CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND SiparisDurumu <> 3 AND SiparisDurumu <> 8";
             List<Siparisler> returnThese = new List<Siparisler>();
             SqlConnection sqlConnection;
             sqlConnection = new SqlConnection(connectionString);
@@ -35,8 +35,8 @@ namespace OrderCancellerApp
                     {
                         Siparisler a = new Siparisler
                         {
-                            MüşteriAdı = reader.IsDBNull(0) ? "null" : reader.GetString(0),
-                            Açıklama = reader.IsDBNull(1) ? "null" : reader.GetString(1),
+                            ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                            Tarih = reader.IsDBNull(1) ? new DateTime(2022, 6, 22) : reader.GetDateTime(1),
                             Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
                             Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
                             SiparişNo = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),

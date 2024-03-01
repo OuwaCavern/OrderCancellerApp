@@ -17,6 +17,7 @@ namespace OrderCancellerApp
 
         private void siparisGoster_Click(object sender, EventArgs e)
         {
+            connectionString = InitializeConnection();
             SiparislerDAO siparislerDAO = new SiparislerDAO();
 
             siparisBindingSource.DataSource = siparislerDAO.TumSiparisleriGetir();

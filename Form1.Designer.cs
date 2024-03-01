@@ -1,4 +1,6 @@
-﻿namespace OrderCancellerApp
+﻿using System.Windows.Forms;
+
+namespace OrderCancellerApp
 {
     partial class Uygulama
     {
@@ -26,6 +28,15 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uygulama));
@@ -147,8 +158,10 @@
             // 
             // Uygulama
             // 
+            this.AcceptButton = this.siparisGoster;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(337, 352);
             this.Controls.Add(this.siparisNoGirdiBilgi);
             this.Controls.Add(this.siparisGoster);

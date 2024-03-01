@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -7,11 +8,19 @@ namespace OrderCancellerApp
 {
     public class SiparislerDAO
     {
+        private string connectionString = "";
+        static string InitializeConnection()
+        {
+            ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+            {
+                ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
+            };
+            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+            return configuration.AppSettings.Settings["baglanti"].Value;
+        }
         public List<Siparisler> TumSiparisleriGetir()
         {
-            string computerName = Environment.MachineName;
-            string connectionString = "";
-            connectionString = $"Data Source={computerName}\\DESENERP;Initial Catalog=DesenPOS;Persist Security Info=True;User ID=sa;Password=DesenErp.12345;";
+            connectionString = InitializeConnection();
             string showCommand = $"SELECT NickName,Aciklama,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND SiparisDurumu <> 3 AND SiparisDurumu <> 8";
             List<Siparisler> returnThese = new List<Siparisler>();
             SqlConnection sqlConnection;

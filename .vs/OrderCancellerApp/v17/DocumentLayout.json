@@ -47,7 +47,8 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-26T11:27:20.506Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -63,7 +64,8 @@
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T11:27:36.533Z"
+              "WhenOpened": "2024-02-26T11:27:36.533Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -73,7 +75,7 @@
               "RelativeDocumentMoniker": "SiparislerDAO.cs",
               "ToolTip": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\SiparislerDAO.cs",
               "RelativeToolTip": "SiparislerDAO.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAWwCYAAAA9AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-27T06:33:02.501Z",
               "EditorCaption": ""
@@ -101,7 +103,8 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T13:45:10.486Z"
+              "WhenOpened": "2024-02-26T13:45:10.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,7 +115,8 @@
               "ToolTip": "C:\\Users\\emirc\\source\\repos\\OrderCancellerApp\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T13:29:12.917Z"
+              "WhenOpened": "2024-02-26T13:29:12.917Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

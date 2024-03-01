@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace OrderCancellerApp
@@ -25,7 +22,7 @@ namespace OrderCancellerApp
         }
         public static void BasariliGirisiAyarla(bool value)
         {
-            basariliGiris = value;  
+            basariliGiris = value;
         }
     }
 }

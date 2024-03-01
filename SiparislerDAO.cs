@@ -36,7 +36,7 @@ namespace OrderCancellerApp
                         Siparisler a = new Siparisler
                         {
                             ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
-                            Tarih = reader.IsDBNull(1) ? new DateTime(2022, 6, 22) : reader.GetDateTime(1),
+                            Tarih = reader.IsDBNull(1) ? new DateTime(2000, 10, 10) : reader.GetDateTime(1),
                             Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
                             Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
                             SiparişNo = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
@@ -44,7 +44,7 @@ namespace OrderCancellerApp
                         returnThese.Add(a);
                     }
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

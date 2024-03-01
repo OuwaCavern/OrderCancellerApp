@@ -1,0 +1,10 @@
+C:\Users\emirc\source\repos\OrderCancellerApp\bin\Release\OrderCancellerApp.exe
+C:\Users\emirc\source\repos\OrderCancellerApp\bin\Release\OrderCancellerApp.pdb
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.csproj.AssemblyReference.cache
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.Uygulama.resources
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.Properties.Resources.resources
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.csproj.GenerateResource.cache
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.csproj.CoreCompileInputs.cache
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.exe
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.pdb
+C:\Users\emirc\source\repos\OrderCancellerApp\obj\Release\OrderCancellerApp.Giris.resources

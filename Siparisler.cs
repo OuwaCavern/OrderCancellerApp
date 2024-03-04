@@ -8,6 +8,6 @@ namespace OrderCancellerApp
         public DateTime Tarih { get; set; }
         public bool Ödendi { get; set; }
         public bool Kapandı { get; set; }
-        public int SiparişNo { get; set; }
+        public string SiparişNo { get; set; }
     }
 }

@@ -48,10 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2E90FCE2408A23902ABA8E9856730FF820517494</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>44A22CD27922F92CF26A3DEE2AFEC0B3C350F7DA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>OrderCancellerApp_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>OrderCancellerApp_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -110,6 +110,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="OrderCancellerApp_1_TemporaryKey.pfx" />
     <None Include="OrderCancellerApp_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -11,43 +11,70 @@ namespace OrderCancellerApp
         private string connectionString = "";
         static string InitializeConnection()
         {
-            ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+            try
             {
-                ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
-            };
-            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
-            return configuration.AppSettings.Settings["baglanti"].Value;
+                ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                {
+                    ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
+                };
+                Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+                return configuration.AppSettings.Settings["baglanti"].Value;
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+                return "";
+            }
         }
         public List<Siparisler> TumSiparisleriGetir()
         {
-            connectionString = InitializeConnection();
-            string showCommand = $"SELECT CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND SiparisDurumu <> 3 AND SiparisDurumu <> 8";
             List<Siparisler> returnThese = new List<Siparisler>();
-            SqlConnection sqlConnection;
-            sqlConnection = new SqlConnection(connectionString);
-            sqlConnection.Open();
-            SqlCommand showCommandSQL = new SqlCommand(showCommand, sqlConnection);
-            using (SqlDataReader reader = showCommandSQL.ExecuteReader())
+            try
             {
-                try
+                connectionString = InitializeConnection();
+                string showCommand = $"SELECT CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND SiparisDurumu <> 3 AND SiparisDurumu <> 8";
+                SqlConnection sqlConnection;
+                sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
+                SqlCommand showCommandSQL = new SqlCommand(showCommand, sqlConnection);
+                using (SqlDataReader reader = showCommandSQL.ExecuteReader())
                 {
-                    while (reader.Read())
+                    if (reader.GetDataTypeName(4) == "nvarchar")
                     {
-                        Siparisler a = new Siparisler
+                        while (reader.Read())
                         {
-                            ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
-                            Tarih = reader.IsDBNull(1) ? new DateTime(2000, 10, 10) : reader.GetDateTime(1),
-                            Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
-                            Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
-                            SiparişNo = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
-                        };
-                        returnThese.Add(a);
+                            Siparisler a = new Siparisler
+                            {
+                                ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                                Tarih = reader.IsDBNull(1) ? new DateTime(2000, 10, 10) : reader.GetDateTime(1),
+                                Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
+                                Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
+                                SiparişNo = reader.IsDBNull(4) ? "null" : reader.GetString(4),
+                            };
+                            returnThese.Add(a);
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                    else if (reader.GetDataTypeName(4) == "int")
+                    {
+                        while (reader.Read())
+                        {
+                            Siparisler a = new Siparisler
+                            {
+                                ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                                Tarih = reader.IsDBNull(1) ? new DateTime(2000, 10, 10) : reader.GetDateTime(1),
+                                Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
+                                Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
+                                SiparişNo =reader.IsDBNull(4) ? "null" : reader.GetInt32(4).ToString(),
+                            };
+                            returnThese.Add(a);
+                        }
+                    }
+                    }
+                return returnThese;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             return returnThese;
         }

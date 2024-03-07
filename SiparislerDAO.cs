@@ -22,7 +22,7 @@ namespace OrderCancellerApp
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Veritabanı bulunamadı. Bilgisayarınızda YemekPOS'un yüklü olduğundan emin olunuz.\n\r" + ex.Message);
                 return "";
             }
         }
@@ -32,7 +32,7 @@ namespace OrderCancellerApp
             try
             {
                 connectionString = InitializeConnection();
-                string showCommand = $"SELECT CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND SiparisDurumu <> 3 AND SiparisDurumu <> 8 ORDER BY Tarih DESC";
+                string showCommand = $"SELECT CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) ORDER BY Tarih DESC";
                 SqlConnection sqlConnection;
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();

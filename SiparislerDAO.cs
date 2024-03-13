@@ -32,7 +32,7 @@ namespace OrderCancellerApp
             try
             {
                 connectionString = InitializeConnection();
-                string showCommand = $"SELECT CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) ORDER BY Tarih DESC";
+                string showCommand = $"SELECT TOP 100 CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND Kapandi=0 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) ORDER BY Tarih DESC";
                 SqlConnection sqlConnection;
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();

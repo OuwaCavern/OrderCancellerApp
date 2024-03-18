@@ -59,7 +59,7 @@ namespace OrderCancellerApp
             // 
             this.YemekPOS.AutoSize = true;
             this.YemekPOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.YemekPOS.Location = new System.Drawing.Point(17, 9);
+            this.YemekPOS.Location = new System.Drawing.Point(22, 9);
             this.YemekPOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.YemekPOS.Name = "YemekPOS";
             this.YemekPOS.Size = new System.Drawing.Size(294, 18);
@@ -149,7 +149,7 @@ namespace OrderCancellerApp
             // siparisNoGirdiBilgi
             // 
             this.siparisNoGirdiBilgi.AutoSize = true;
-            this.siparisNoGirdiBilgi.Location = new System.Drawing.Point(59, 42);
+            this.siparisNoGirdiBilgi.Location = new System.Drawing.Point(68, 42);
             this.siparisNoGirdiBilgi.Name = "siparisNoGirdiBilgi";
             this.siparisNoGirdiBilgi.Size = new System.Drawing.Size(211, 26);
             this.siparisNoGirdiBilgi.TabIndex = 8;

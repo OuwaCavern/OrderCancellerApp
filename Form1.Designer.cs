@@ -57,6 +57,9 @@ namespace OrderCancellerApp
             // 
             // YemekPOS
             // 
+            this.YemekPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.YemekPOS.AutoSize = true;
             this.YemekPOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.YemekPOS.Location = new System.Drawing.Point(22, 9);
@@ -70,6 +73,7 @@ namespace OrderCancellerApp
             // NO
             // 
             this.NO.AutoSize = true;
+            this.NO.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.NO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.NO.Location = new System.Drawing.Point(132, 68);
             this.NO.Name = "NO";
@@ -79,6 +83,9 @@ namespace OrderCancellerApp
             // 
             // siparisNOGirdisi
             // 
+            this.siparisNOGirdisi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.siparisNOGirdisi.Location = new System.Drawing.Point(12, 89);
             this.siparisNOGirdisi.Name = "siparisNOGirdisi";
             this.siparisNOGirdisi.Size = new System.Drawing.Size(313, 20);
@@ -87,6 +94,7 @@ namespace OrderCancellerApp
             // 
             // iptalButonu
             // 
+            this.iptalButonu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.iptalButonu.Location = new System.Drawing.Point(12, 124);
             this.iptalButonu.Name = "iptalButonu";
             this.iptalButonu.Size = new System.Drawing.Size(91, 28);
@@ -97,6 +105,7 @@ namespace OrderCancellerApp
             // 
             // teslimButonu
             // 
+            this.teslimButonu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.teslimButonu.Location = new System.Drawing.Point(234, 124);
             this.teslimButonu.Name = "teslimButonu";
             this.teslimButonu.Size = new System.Drawing.Size(91, 28);
@@ -111,23 +120,30 @@ namespace OrderCancellerApp
             // 
             // siparisListesi
             // 
+            this.siparisListesi.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
             this.siparisListesi.AllowUserToAddRows = false;
             this.siparisListesi.AllowUserToDeleteRows = false;
             this.siparisListesi.AllowUserToOrderColumns = true;
             this.siparisListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.siparisListesi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.siparisListesi.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.siparisListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.siparisListesi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.siparisListesi.Location = new System.Drawing.Point(-1, 201);
+            this.siparisListesi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.siparisListesi.Location = new System.Drawing.Point(0, 202);
             this.siparisListesi.Name = "siparisListesi";
             this.siparisListesi.ReadOnly = true;
             this.siparisListesi.RowHeadersVisible = false;
             this.siparisListesi.RowHeadersWidth = 4;
-            this.siparisListesi.Size = new System.Drawing.Size(340, 150);
+            this.siparisListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.siparisListesi.Size = new System.Drawing.Size(337, 150);
             this.siparisListesi.TabIndex = 5;
             // 
             // zamanBildirgesi
             // 
+            this.zamanBildirgesi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.zamanBildirgesi.AutoSize = true;
             this.zamanBildirgesi.Location = new System.Drawing.Point(132, 185);
             this.zamanBildirgesi.Name = "zamanBildirgesi";
@@ -137,6 +153,7 @@ namespace OrderCancellerApp
             // 
             // siparisGoster
             // 
+            this.siparisGoster.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.siparisGoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.siparisGoster.Location = new System.Drawing.Point(103, 159);
             this.siparisGoster.Name = "siparisGoster";
@@ -148,6 +165,9 @@ namespace OrderCancellerApp
             // 
             // siparisNoGirdiBilgi
             // 
+            this.siparisNoGirdiBilgi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.siparisNoGirdiBilgi.AutoSize = true;
             this.siparisNoGirdiBilgi.Location = new System.Drawing.Point(68, 42);
             this.siparisNoGirdiBilgi.Name = "siparisNoGirdiBilgi";
@@ -162,6 +182,7 @@ namespace OrderCancellerApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(337, 352);
             this.Controls.Add(this.siparisNoGirdiBilgi);
             this.Controls.Add(this.siparisGoster);

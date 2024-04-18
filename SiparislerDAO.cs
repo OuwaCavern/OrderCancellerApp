@@ -44,39 +44,39 @@ namespace OrderCancellerApp
             try
             {
                 connectionString = InitializeConnection();
-                string showCommand = $"SELECT TOP 100 CekNo,Tarih,Odendi,Kapandi,SiparisNo FROM POSSiparis WHERE SysAktif=1 AND Kapandi=0 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) ORDER BY Tarih DESC";
+                string showCommand = $"SELECT TOP 100 CekNo,SiparisNo,Tarih,Odendi,Kapandi FROM POSSiparis WHERE SysAktif=1 AND Kapandi=0 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) ORDER BY Tarih DESC";
                 SqlConnection sqlConnection;
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 SqlCommand showCommandSQL = new SqlCommand(showCommand, sqlConnection);
                 using (SqlDataReader reader = showCommandSQL.ExecuteReader())
                 {
-                    if (reader.GetDataTypeName(4) == "nvarchar")
+                    if (reader.GetDataTypeName(1) == "nvarchar")
                     {
                         while (reader.Read())
                         {
                             Siparisler a = new Siparisler
                             {
                                 ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
-                                Tarih = reader.IsDBNull(1) ? new DateTime(2000, 10, 10) : reader.GetDateTime(1),
-                                Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
-                                Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
-                                SiparişNo = reader.IsDBNull(4) ? "null" : reader.GetString(4),
+                                SiparişNo = reader.IsDBNull(1) ? "null" : reader.GetString(1),
+                                Tarih = reader.IsDBNull(2) ? new DateTime(2000, 10, 10) : reader.GetDateTime(2),
+                                Ödendi = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
+                                Kapandı = reader.IsDBNull(4) ? false : reader.GetBoolean(4),
                             };
                             returnThese.Add(a);
                         }
                     }
-                    else if (reader.GetDataTypeName(4) == "int")
+                    else if (reader.GetDataTypeName(1) == "int")
                     {
                         while (reader.Read())
                         {
                             Siparisler a = new Siparisler
                             {
                                 ÇekNo = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
-                                Tarih = reader.IsDBNull(1) ? new DateTime(2000, 10, 10) : reader.GetDateTime(1),
-                                Ödendi = reader.IsDBNull(2) ? false : reader.GetBoolean(2),
-                                Kapandı = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
-                                SiparişNo =reader.IsDBNull(4) ? "null" : reader.GetInt32(4).ToString(),
+                                SiparişNo =reader.IsDBNull(1) ? "null" : reader.GetInt32(1).ToString(),
+                                Tarih = reader.IsDBNull(2) ? new DateTime(2000, 10, 10) : reader.GetDateTime(2),
+                                Ödendi = reader.IsDBNull(3) ? false : reader.GetBoolean(3),
+                                Kapandı = reader.IsDBNull(4) ? false : reader.GetBoolean(4),
                             };
                             returnThese.Add(a);
                         }

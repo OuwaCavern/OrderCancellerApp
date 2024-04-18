@@ -13,16 +13,28 @@ namespace OrderCancellerApp
         {
             try
             {
-                ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                try
                 {
-                    ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
-                };
-                Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
-                return configuration.AppSettings.Settings["baglanti"].Value;
+                    ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                    {
+                        ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
+                    };
+                    Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+                    return configuration.AppSettings.Settings["baglanti"].Value;
+                }
+                catch (Exception ex)
+                {
+                    ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                    {
+                        ExeConfigFilename = @"D:\DesenPOS\DesenPos.exe.config"
+                    };
+                    Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+                    return configuration.AppSettings.Settings["baglanti"].Value;
+                }
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Veritabanı bulunamadı. Bilgisayarınızda YemekPOS'un yüklü olduğundan emin olunuz.\n\r" + ex.Message);
+                MessageBox.Show(@"Veritabanı bulunamadı. Bilgisayarınızda YemekPOS'un yüklü olduğundan emin olunuz. Eğer yüklüyse, tüm dosyaların C:\DesenPOS klasörünün içinde olduğundan emin olun." + ex.Message);
                 return "";
             }
         }

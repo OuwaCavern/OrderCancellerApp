@@ -19,8 +19,7 @@ namespace OrderCancellerApp
         {
             connectionString = InitializeConnection();
             SiparislerDAO siparislerDAO = new SiparislerDAO();
-
-            siparisBindingSource.DataSource = siparislerDAO.TumSiparisleriGetir();
+            siparisBindingSource.DataSource = siparislerDAO.TumSiparisleriGetir(sonXGunGirdisi);
             siparisListesi.DataSource = siparisBindingSource;
         }
 
@@ -124,6 +123,12 @@ namespace OrderCancellerApp
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        decimal sonXGunGirdisi = 1;
+        private void sonXGun_ValueChanged(object sender, EventArgs e)
+        {
+            sonXGunGirdisi = sonXGun.Value;
         }
     }
 }

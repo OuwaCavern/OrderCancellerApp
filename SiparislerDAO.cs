@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace OrderCancellerApp
@@ -38,13 +39,14 @@ namespace OrderCancellerApp
                 return "";
             }
         }
-        public List<Siparisler> TumSiparisleriGetir()
+        public List<Siparisler> TumSiparisleriGetir(decimal sonXGun)
         {
+            sonXGun = (int)sonXGun;
             List<Siparisler> returnThese = new List<Siparisler>();
             try
             {
                 connectionString = InitializeConnection();
-                string showCommand = $"SELECT TOP 100 CekNo,SiparisNo,Tarih,Odendi,Kapandi FROM POSSiparis WHERE SysAktif=1 AND Kapandi=0 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) ORDER BY Tarih DESC";
+                string showCommand = $"SELECT TOP 100 CekNo,SiparisNo,Tarih,Odendi,Kapandi FROM POSSiparis WHERE SysAktif=1 AND Kapandi=0 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) AND Tarih > GETDATE() - {sonXGun} ORDER BY Tarih DESC";
                 SqlConnection sqlConnection;
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();

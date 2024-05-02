@@ -51,8 +51,11 @@ namespace OrderCancellerApp
             this.zamanBildirgesi = new System.Windows.Forms.Label();
             this.siparisGoster = new System.Windows.Forms.Button();
             this.siparisNoGirdiBilgi = new System.Windows.Forms.Label();
+            this.sonXGun = new System.Windows.Forms.NumericUpDown();
+            this.sonXGunLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListesi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sonXGun)).BeginInit();
             this.SuspendLayout();
             // 
             // YemekPOS
@@ -176,6 +179,28 @@ namespace OrderCancellerApp
             this.siparisNoGirdiBilgi.Text = "         Birden çok SiparişNO girmek için\n\r SiparişNOların aralarına virgül koyab" +
     "ilirsiniz.";
             // 
+            // sonXGun
+            // 
+            this.sonXGun.Location = new System.Drawing.Point(25, 176);
+            this.sonXGun.Name = "sonXGun";
+            this.sonXGun.Size = new System.Drawing.Size(50, 20);
+            this.sonXGun.TabIndex = 9;
+            this.sonXGun.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sonXGun.ValueChanged += new System.EventHandler(this.sonXGun_ValueChanged);
+            // 
+            // sonXGunLabel
+            // 
+            this.sonXGunLabel.AutoSize = true;
+            this.sonXGunLabel.Location = new System.Drawing.Point(22, 159);
+            this.sonXGunLabel.Name = "sonXGunLabel";
+            this.sonXGunLabel.Size = new System.Drawing.Size(57, 13);
+            this.sonXGunLabel.TabIndex = 10;
+            this.sonXGunLabel.Text = "Son X gün";
+            // 
             // Uygulama
             // 
             this.AcceptButton = this.siparisGoster;
@@ -184,6 +209,8 @@ namespace OrderCancellerApp
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(337, 352);
+            this.Controls.Add(this.sonXGunLabel);
+            this.Controls.Add(this.sonXGun);
             this.Controls.Add(this.siparisNoGirdiBilgi);
             this.Controls.Add(this.siparisGoster);
             this.Controls.Add(this.zamanBildirgesi);
@@ -200,6 +227,7 @@ namespace OrderCancellerApp
             this.Text = "YemekPOS Sıpariş İptal/Teslim Uygulaması";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListesi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sonXGun)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +246,8 @@ namespace OrderCancellerApp
         private System.Windows.Forms.Label zamanBildirgesi;
         private System.Windows.Forms.Button siparisGoster;
         private System.Windows.Forms.Label siparisNoGirdiBilgi;
+        private NumericUpDown sonXGun;
+        private Label sonXGunLabel;
     }
 }
 

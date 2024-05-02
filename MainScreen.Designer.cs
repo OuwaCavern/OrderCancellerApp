@@ -182,6 +182,11 @@ namespace OrderCancellerApp
             // sonXGun
             // 
             this.sonXGun.Location = new System.Drawing.Point(25, 176);
+            this.sonXGun.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.sonXGun.Name = "sonXGun";
             this.sonXGun.Size = new System.Drawing.Size(50, 20);
             this.sonXGun.TabIndex = 9;

@@ -12,35 +12,15 @@ namespace OrderCancellerApp
         public Uygulama()
         {
             InitializeComponent();
-            connectionString = InitializeConnection();
+            connectionString = SiparislerDAO.connectionString;
         }
 
         private void siparisGoster_Click(object sender, EventArgs e)
         {
-            connectionString = InitializeConnection();
-            SiparislerDAO siparislerDAO = new SiparislerDAO();
-            siparisBindingSource.DataSource = siparislerDAO.TumSiparisleriGetir(sonXGunGirdisi);
+            siparisBindingSource.DataSource = SiparislerDAO.TumSiparisleriGetir(sonXGunGirdisi, SiparislerDAO.connectionString);
             siparisListesi.DataSource = siparisBindingSource;
         }
 
-
-        static string InitializeConnection()
-        {
-            try
-            {
-                ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
-                {
-                    ExeConfigFilename = @"C:\DesenPOS\DesenPos.exe.config"
-                };
-                Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
-                return configuration.AppSettings.Settings["baglanti"].Value;
-            }
-            catch (NullReferenceException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return "";
-            }
-        }
         SqlConnection sqlConnection;
         string siparisNOInput = "";
 
@@ -54,7 +34,6 @@ namespace OrderCancellerApp
             SiparisIptal();
             void SiparisIptal()
             {
-                InitializeConnection();
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 try
@@ -92,7 +71,6 @@ namespace OrderCancellerApp
             SiparisTeslim();
             void SiparisTeslim()
             {
-                InitializeConnection();
                 sqlConnection = new SqlConnection(connectionString);
                 sqlConnection.Open();
                 try

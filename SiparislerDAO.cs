@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace OrderCancellerApp
 {
     public class SiparislerDAO
     {
-        private string connectionString = "";
+        internal static string connectionString = InitializeConnection();
         static string InitializeConnection()
         {
             try
             {
-                try
+                if (File.Exists(@"C:\DesenPOS\DesenPos.exe.config"))
                 {
                     ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
                     {
@@ -23,11 +23,38 @@ namespace OrderCancellerApp
                     Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
                     return configuration.AppSettings.Settings["baglanti"].Value;
                 }
-                catch (Exception ex)
+                else if (File.Exists(@"C:\DesenPOS\DesenPOS\DesenPos.exe.config"))
+                {
+                    ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                    {
+                        ExeConfigFilename = @"C:\DesenPOS\DesenPOS\DesenPos.exe.config"
+                    };
+                    Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+                    return configuration.AppSettings.Settings["baglanti"].Value;
+                }
+                else if (File.Exists(@"D:\DesenPOS\DesenPos.exe.config"))
                 {
                     ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
                     {
                         ExeConfigFilename = @"D:\DesenPOS\DesenPos.exe.config"
+                    };
+                    Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+                    return configuration.AppSettings.Settings["baglanti"].Value;
+                }
+                else if (File.Exists(@"D:\DesenPOS\DesenPOS\DesenPos.exe.config"))
+                {
+                    ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                    {
+                        ExeConfigFilename = @"D:\DesenPOS\DesenPos.exe.config"
+                    };
+                    Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
+                    return configuration.AppSettings.Settings["baglanti"].Value;
+                }
+                else
+                {
+                    ExeConfigurationFileMap fileMapping = new ExeConfigurationFileMap
+                    {
+                        ExeConfigFilename = @"D:\DesenPos.exe.config"
                     };
                     Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMapping, ConfigurationUserLevel.None);
                     return configuration.AppSettings.Settings["baglanti"].Value;
@@ -39,13 +66,12 @@ namespace OrderCancellerApp
                 return "";
             }
         }
-        public List<Siparisler> TumSiparisleriGetir(decimal sonXGun)
+        public static List<Siparisler> TumSiparisleriGetir(decimal sonXGun, string connectionString)
         {
             sonXGun = (int)sonXGun;
             List<Siparisler> returnThese = new List<Siparisler>();
             try
             {
-                connectionString = InitializeConnection();
                 string showCommand = $"SELECT TOP 100 CekNo,SiparisNo,Tarih,Odendi,Kapandi FROM POSSiparis WHERE SysAktif=1 AND Kapandi=0 AND (SiparisDurumu = 0 OR SiparisDurumu = 1 OR SiparisDurumu = 2) AND Tarih > GETDATE() - {sonXGun} ORDER BY Tarih DESC";
                 SqlConnection sqlConnection;
                 sqlConnection = new SqlConnection(connectionString);

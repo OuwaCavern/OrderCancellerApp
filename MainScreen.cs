@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace OrderCancellerApp
@@ -12,13 +13,62 @@ namespace OrderCancellerApp
         public Uygulama()
         {
             InitializeComponent();
+
+            this.Resize += MainScreen_Resiz;
+            formOriginalSize = this.Size;
+            recYemekPOSLabel = new Rectangle(YemekPOS.Location, YemekPOS.Size);
+            recSiparisNoGirdiBilgi = new Rectangle(siparisNoGirdiBilgi.Location, siparisNoGirdiBilgi.Size);
+            recNO = new Rectangle(NO.Location, NO.Size);
+            recİptalButonu = new Rectangle(iptalButonu.Location, iptalButonu.Size);
+            recTeslimButonu = new Rectangle(teslimButonu.Location, teslimButonu.Size);
+            recSiparisGoster = new Rectangle(siparisGoster.Location, siparisGoster.Size);
+            recSonXGun = new Rectangle(sonXGun.Location, sonXGun.Size);
+            recZamanBildirgesi = new Rectangle(zamanBildirgesi.Location, zamanBildirgesi.Size);
+            recSiparisListesi = new Rectangle(siparisListesi.Location, siparisListesi.Size);
+            siparisNOGirdisi.Multiline = true;
+
             connectionString = SiparislerDAO.connectionString;
         }
+        private Size formOriginalSize;
+        private Rectangle recYemekPOSLabel;
+        private Rectangle recSiparisNoGirdiBilgi;
+        private Rectangle recNO;
+        private Rectangle recİptalButonu;
+        private Rectangle recTeslimButonu;
+        private Rectangle recSiparisGoster;
+        private Rectangle recSonXGun;
+        private Rectangle recZamanBildirgesi;
+        private Rectangle recSiparisListesi;
 
-        private void siparisGoster_Click(object sender, EventArgs e)
+        private void MainScreen_Resiz(object sender, EventArgs e)
+        {
+            ResizeControl(YemekPOS, recYemekPOSLabel);
+            ResizeControl(siparisNoGirdiBilgi, recSiparisNoGirdiBilgi);
+            ResizeControl(NO, recNO);
+            ResizeControl(iptalButonu, recİptalButonu);
+            ResizeControl(teslimButonu, recTeslimButonu);
+            ResizeControl(siparisGoster, recSiparisGoster);
+            ResizeControl(sonXGun, recSonXGun);
+            ResizeControl(zamanBildirgesi, recZamanBildirgesi);
+            ResizeControl(siparisListesi, recSiparisListesi);
+        }
+            private void siparisGoster_Click(object sender, EventArgs e)
         {
             siparisBindingSource.DataSource = SiparislerDAO.TumSiparisleriGetir(sonXGunGirdisi, SiparislerDAO.connectionString);
             siparisListesi.DataSource = siparisBindingSource;
+        }
+        private void ResizeControl(Control control, Rectangle rect)
+        {
+            float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
+            float yRatio = (float)(this.Height) / (float)(formOriginalSize.Height);
+            int newX = (int)(rect.X * xRatio);
+            int newY = (int)(rect.Y * yRatio);
+
+            int newWidth = (int)(rect.Width * xRatio);
+            int newHeight = (int)(rect.Height * yRatio);
+
+            control.Location = new Point(newX, newY);
+            control.Size = new Size(newWidth, newHeight);
         }
 
         SqlConnection sqlConnection;

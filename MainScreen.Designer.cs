@@ -63,7 +63,6 @@ namespace OrderCancellerApp
             this.YemekPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.YemekPOS.AutoSize = true;
             this.YemekPOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.YemekPOS.Location = new System.Drawing.Point(22, 9);
             this.YemekPOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -75,7 +74,6 @@ namespace OrderCancellerApp
             // 
             // NO
             // 
-            this.NO.AutoSize = true;
             this.NO.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.NO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.NO.Location = new System.Drawing.Point(132, 68);
@@ -171,7 +169,6 @@ namespace OrderCancellerApp
             this.siparisNoGirdiBilgi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.siparisNoGirdiBilgi.AutoSize = true;
             this.siparisNoGirdiBilgi.Location = new System.Drawing.Point(68, 42);
             this.siparisNoGirdiBilgi.Name = "siparisNoGirdiBilgi";
             this.siparisNoGirdiBilgi.Size = new System.Drawing.Size(211, 26);

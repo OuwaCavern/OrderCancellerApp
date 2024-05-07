@@ -10,13 +10,13 @@ namespace OrderCancellerApp
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void sifreGirisi_TextChanged(object sender, EventArgs e)
         {
-            string kullaniciGirisi = textBox1.Text;
+            string kullaniciGirisi = sifreGirisi.Text;
         }
         private void girisButonu_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "DesenErp.12345")
+            if (sifreGirisi.Text == "DesenErp.12345")
             {
                 Program.BasariliGirisiAyarla(true);
                 this.Close();

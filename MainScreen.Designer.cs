@@ -51,7 +51,7 @@ namespace OrderCancellerApp
             this.zamanBildirgesi = new System.Windows.Forms.Label();
             this.siparisGoster = new System.Windows.Forms.Button();
             this.siparisNoGirdiBilgi = new System.Windows.Forms.Label();
-            this.sonXGun = new System.Windows.Forms.NumericUpDown();
+            this.sonXGun = new System.Windows.Forms.NumericUpDown();;
             this.sonXGunLabel = new System.Windows.Forms.Label();
             this.siparisCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();

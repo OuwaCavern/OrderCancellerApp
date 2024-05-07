@@ -41,7 +41,7 @@ namespace OrderCancellerApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giris));
             this.girisBilgisi = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sifreGirisi = new System.Windows.Forms.TextBox();
             this.girisButonu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,15 +54,15 @@ namespace OrderCancellerApp
             this.girisBilgisi.TabIndex = 0;
             this.girisBilgisi.Text = "Lütfen şifreyi giriniz";
             // 
-            // textBox1
+            // sifreGirisi
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(109, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSystemPasswordChar = true;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.sifreGirisi.Location = new System.Drawing.Point(56, 56);
+            this.sifreGirisi.Name = "sifreGirisi";
+            this.sifreGirisi.PasswordChar = '*';
+            this.sifreGirisi.Size = new System.Drawing.Size(109, 20);
+            this.sifreGirisi.TabIndex = 1;
+            this.sifreGirisi.UseSystemPasswordChar = true;
+            this.sifreGirisi.TextChanged += new System.EventHandler(this.sifreGirisi_TextChanged);
             // 
             // girisButonu
             // 
@@ -81,7 +81,7 @@ namespace OrderCancellerApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(231, 158);
             this.Controls.Add(this.girisButonu);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sifreGirisi);
             this.Controls.Add(this.girisBilgisi);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Giris";
@@ -95,6 +95,6 @@ namespace OrderCancellerApp
 
         private System.Windows.Forms.Label girisBilgisi;
         private System.Windows.Forms.Button girisButonu;
-        protected System.Windows.Forms.TextBox textBox1;
+        protected System.Windows.Forms.TextBox sifreGirisi;
     }
 }

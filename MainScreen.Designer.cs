@@ -53,6 +53,7 @@ namespace OrderCancellerApp
             this.siparisNoGirdiBilgi = new System.Windows.Forms.Label();
             this.sonXGun = new System.Windows.Forms.NumericUpDown();
             this.sonXGunLabel = new System.Windows.Forms.Label();
+            this.siparisCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siparisListesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sonXGun)).BeginInit();
@@ -67,7 +68,7 @@ namespace OrderCancellerApp
             this.YemekPOS.Location = new System.Drawing.Point(22, 9);
             this.YemekPOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.YemekPOS.Name = "YemekPOS";
-            this.YemekPOS.Size = new System.Drawing.Size(294, 18);
+            this.YemekPOS.Size = new System.Drawing.Size(301, 18);
             this.YemekPOS.TabIndex = 0;
             this.YemekPOS.Text = "YemekPOS Sıpariş İptal/Teslim Uygulaması";
             this.YemekPOS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,7 +90,7 @@ namespace OrderCancellerApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.siparisNOGirdisi.Location = new System.Drawing.Point(12, 89);
             this.siparisNOGirdisi.Name = "siparisNOGirdisi";
-            this.siparisNOGirdisi.Size = new System.Drawing.Size(313, 20);
+            this.siparisNOGirdisi.Size = new System.Drawing.Size(320, 20);
             this.siparisNOGirdisi.TabIndex = 2;
             this.siparisNOGirdisi.TextChanged += new System.EventHandler(this.siparisNOGirdisi_TextChanged);
             // 
@@ -98,7 +99,7 @@ namespace OrderCancellerApp
             this.iptalButonu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.iptalButonu.Location = new System.Drawing.Point(12, 124);
             this.iptalButonu.Name = "iptalButonu";
-            this.iptalButonu.Size = new System.Drawing.Size(91, 28);
+            this.iptalButonu.Size = new System.Drawing.Size(98, 28);
             this.iptalButonu.TabIndex = 3;
             this.iptalButonu.Text = "Iptal Et";
             this.iptalButonu.UseVisualStyleBackColor = true;
@@ -109,7 +110,7 @@ namespace OrderCancellerApp
             this.teslimButonu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.teslimButonu.Location = new System.Drawing.Point(234, 124);
             this.teslimButonu.Name = "teslimButonu";
-            this.teslimButonu.Size = new System.Drawing.Size(91, 28);
+            this.teslimButonu.Size = new System.Drawing.Size(98, 28);
             this.teslimButonu.TabIndex = 4;
             this.teslimButonu.Text = "Teslim Edildi";
             this.teslimButonu.UseVisualStyleBackColor = true;
@@ -129,17 +130,18 @@ namespace OrderCancellerApp
             this.siparisListesi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.siparisListesi.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.siparisListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.siparisListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.siparisCheckBoxColumn});
             this.siparisListesi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.siparisListesi.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.siparisListesi.Location = new System.Drawing.Point(0, 202);
             this.siparisListesi.Name = "siparisListesi";
-            this.siparisListesi.ReadOnly = true;
             this.siparisListesi.RowHeadersVisible = false;
             this.siparisListesi.RowHeadersWidth = 4;
             this.siparisListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.siparisListesi.Size = new System.Drawing.Size(337, 150);
+            this.siparisListesi.Size = new System.Drawing.Size(344, 150);
             this.siparisListesi.TabIndex = 5;
-            // 
+            this.siparisListesi.CellContentClick += siparisListesi_CellContentClick;            // 
             // zamanBildirgesi
             // 
             this.zamanBildirgesi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -158,7 +160,7 @@ namespace OrderCancellerApp
             this.siparisGoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.siparisGoster.Location = new System.Drawing.Point(103, 159);
             this.siparisGoster.Name = "siparisGoster";
-            this.siparisGoster.Size = new System.Drawing.Size(130, 23);
+            this.siparisGoster.Size = new System.Drawing.Size(137, 23);
             this.siparisGoster.TabIndex = 7;
             this.siparisGoster.Text = "Siparişleri Göster";
             this.siparisGoster.UseVisualStyleBackColor = true;
@@ -171,7 +173,7 @@ namespace OrderCancellerApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.siparisNoGirdiBilgi.Location = new System.Drawing.Point(68, 42);
             this.siparisNoGirdiBilgi.Name = "siparisNoGirdiBilgi";
-            this.siparisNoGirdiBilgi.Size = new System.Drawing.Size(211, 26);
+            this.siparisNoGirdiBilgi.Size = new System.Drawing.Size(218, 26);
             this.siparisNoGirdiBilgi.TabIndex = 8;
             this.siparisNoGirdiBilgi.Text = "         Birden çok SiparişNO girmek için\n\r SiparişNOların aralarına virgül koyab" +
     "ilirsiniz.";
@@ -203,6 +205,12 @@ namespace OrderCancellerApp
             this.sonXGunLabel.TabIndex = 10;
             this.sonXGunLabel.Text = "Son X gün";
             // 
+            // siparisCheckBoxColumn
+            // 
+            this.siparisCheckBoxColumn.HeaderText = "Seç";
+            this.siparisCheckBoxColumn.Name = "siparisCheckBoxColumn";
+            this.siparisCheckBoxColumn.Width = 32;
+            // 
             // Uygulama
             // 
             this.AcceptButton = this.siparisGoster;
@@ -210,7 +218,7 @@ namespace OrderCancellerApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(337, 352);
+            this.ClientSize = new System.Drawing.Size(344, 352);
             this.Controls.Add(this.sonXGunLabel);
             this.Controls.Add(this.sonXGun);
             this.Controls.Add(this.siparisNoGirdiBilgi);
@@ -250,6 +258,7 @@ namespace OrderCancellerApp
         private System.Windows.Forms.Label siparisNoGirdiBilgi;
         private NumericUpDown sonXGun;
         private Label sonXGunLabel;
+        private DataGridViewCheckBoxColumn siparisCheckBoxColumn;
     }
 }
 

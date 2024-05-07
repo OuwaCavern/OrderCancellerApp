@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -157,6 +158,33 @@ namespace OrderCancellerApp
         private void sonXGun_ValueChanged(object sender, EventArgs e)
         {
             sonXGunGirdisi = sonXGun.Value;
+        }
+
+        List<string> tiklenmisSiparisler = new List<string>();
+        private void siparisListesi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == siparisListesi.Columns["siparisCheckBoxColumn"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewCheckBoxCell checkBoxCell = siparisListesi.Rows[e.RowIndex].Cells["siparisCheckBoxColumn"] as DataGridViewCheckBoxCell;
+                if (checkBoxCell.Value == null)
+                {
+                    checkBoxCell.Value = false;
+                }
+                if (checkBoxCell != null)
+                {
+                    bool checkBoxValue = (bool)checkBoxCell.Value;
+                    string tiklenmisSiparis = siparisListesi.Rows[e.RowIndex].Cells["SiparişNo"].Value.ToString();
+                    if (!checkBoxValue)
+                    {
+                        tiklenmisSiparisler.Add(tiklenmisSiparis);
+                        checkBoxCell.Value = true;
+                    }
+                    else if (tiklenmisSiparisler.Contains(tiklenmisSiparis) && checkBoxValue)
+                    {
+                        tiklenmisSiparisler.Remove(tiklenmisSiparis);
+                    }
+                }
+            }
         }
     }
 }

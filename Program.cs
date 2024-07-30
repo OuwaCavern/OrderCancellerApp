@@ -15,7 +15,7 @@ namespace OrderCancellerApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Giris());
-            if (basariliGiris == true)
+            if (basariliGiris)
             {
                 Application.Run(new Uygulama());
             }
